@@ -10,6 +10,7 @@ class Cell
 {
 public:
     Cell(const unsigned int x, const unsigned int y);
+    ~Cell();
 
     unsigned int getX() const;
     unsigned int getY() const;

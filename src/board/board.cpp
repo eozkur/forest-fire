@@ -8,6 +8,16 @@ Board::Board(const unsigned int height, const unsigned int width)
     cells = new std::vector<Cell *>();
 }
 
+Board::~Board()
+{
+    for (unsigned long i = 0; i < cells->size(); ++i)
+    {
+        delete cells->at(i);
+    }
+
+    delete cells;
+}
+
 unsigned int Board::getHeight() const
 {
     return height;

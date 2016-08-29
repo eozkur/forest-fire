@@ -4,9 +4,14 @@ ForestFireSimulator::ForestFireSimulator(const unsigned int boardHeight, const u
 {
     board = new Board(boardHeight, boardWidth);
 
-    this->p = p;
-    this->f = f;
-    this->simulationSpeed = simulationSpeed;
+    this->p = 200;
+    this->f = 10;
+    this->simulationSpeed = 60;
+}
+
+ForestFireSimulator::~ForestFireSimulator()
+{
+    delete board;
 }
 
 unsigned int ForestFireSimulator::getP() const

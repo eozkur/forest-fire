@@ -12,6 +12,7 @@ class ForestFireSimulator
 {
 public:
     ForestFireSimulator(const unsigned int boardHeight, const unsigned int boardWidth);
+    ~ForestFireSimulator();
 
     unsigned int getP() const;
     void setP(const unsigned int p);

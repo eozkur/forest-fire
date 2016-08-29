@@ -8,6 +8,10 @@ Cell::Cell(const unsigned int x, const unsigned int y)
     cellState = CellState::Empty;
 }
 
+Cell::~Cell()
+{
+}
+
 unsigned int Cell::getX() const
 {
     return x;

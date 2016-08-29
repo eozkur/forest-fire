@@ -12,6 +12,7 @@ class Board
 {
 public:
     Board(const unsigned int height, const unsigned int width);
+    ~Board();
 
     unsigned int getHeight() const;
     unsigned int getWidth() const;
