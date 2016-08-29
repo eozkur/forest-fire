@@ -5,6 +5,9 @@
 
 #include "cell.h"
 
+/*!
+ * \brief Top-level Board access class for getting information about Cell.
+ */
 class Board
 {
 public:

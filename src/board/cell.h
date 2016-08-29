@@ -3,6 +3,9 @@
 
 #include "cellstate.h"
 
+/*!
+ * \brief A cell within the Board that holds a CellState.
+ */
 class Cell
 {
 public:

@@ -2,13 +2,14 @@ TEMPLATE = app
 CONFIG += console c++11
 CONFIG -= appbundle qt
 
-SOURCES += src/main.cpp \
-    src/cell.cpp \
-    src/board.cpp \
-    src/forestfiresimulator.cpp
-
 HEADERS += \
-    src/cell.h \
-    src/board.h \
-    src/forestfiresimulator.h \
-    src/cellstate.h
+    src/board/cell.h \
+    src/board/board.h \
+    src/board/cellstate.h \
+    src/forestfiresimulator.h
+
+SOURCES += \
+    src/main.cpp \
+    src/board/board.cpp \
+    src/board/cell.cpp \
+    src/forestfiresimulator.cpp

@@ -1,0 +1,41 @@
+\hypertarget{class_board}{}\section{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+Top-\/level \hyperlink{class_board}{Board} access class for getting information about \hyperlink{class_cell}{Cell}.  
+
+
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (const unsigned int height, const unsigned int width)\hypertarget{class_board_ac2d6bdf52110ace6e23cd549f6161e6d}{}\label{class_board_ac2d6bdf52110ace6e23cd549f6161e6d}
+
+\item 
+unsigned int {\bfseries get\+Height} () const \hypertarget{class_board_adbe4819cf20cdbd0928ea872ded80fa1}{}\label{class_board_adbe4819cf20cdbd0928ea872ded80fa1}
+
+\item 
+unsigned int {\bfseries get\+Width} () const \hypertarget{class_board_aca1f1d7e7bfaf26f5ea8c80a0ea32e08}{}\label{class_board_aca1f1d7e7bfaf26f5ea8c80a0ea32e08}
+
+\item 
+\hyperlink{class_cell}{Cell} $\ast$ {\bfseries get\+Cell} (const unsigned int x, const unsigned int y) const \hypertarget{class_board_a462d2d88de065034690a157b5e3a7e2a}{}\label{class_board_a462d2d88de065034690a157b5e3a7e2a}
+
+\item 
+std\+::vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $\ast$ {\bfseries get\+Neighbors} (const unsigned int x, const unsigned int y) const \hypertarget{class_board_ad87194acb6f107d2455734bb583deadd}{}\label{class_board_ad87194acb6f107d2455734bb583deadd}
+
+\item 
+std\+::vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $\ast$ {\bfseries get\+All\+Cells\+With\+State} (const Cell\+State cell\+State) const \hypertarget{class_board_ad3e2d2c116f0b66293ac8be281875fef}{}\label{class_board_ad3e2d2c116f0b66293ac8be281875fef}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Top-\/level \hyperlink{class_board}{Board} access class for getting information about \hyperlink{class_cell}{Cell}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/john/\+Desktop/trunk/src/board/board.\+h\item 
+C\+:/\+Users/john/\+Desktop/trunk/src/board/board.\+cpp\end{DoxyCompactItemize}

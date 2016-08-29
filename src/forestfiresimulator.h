@@ -5,8 +5,8 @@
 #include <time.h>
 #include <vector>
 
-#include "board.h"
-#include "cell.h"
+#include "board/board.h"
+#include "board/cell.h"
 
 class ForestFireSimulator
 {
