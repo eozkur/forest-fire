@@ -1,6 +1,6 @@
 #include "forestfiresimulator.h"
 
-ForestFireSimulator::ForestFireSimulator(const unsigned int boardHeight, const unsigned int boardWidth)
+ForestFireSimulator::ForestFireSimulator(const unsigned short boardHeight, const unsigned short boardWidth)
 {
     board = new Board(boardHeight, boardWidth);
 
@@ -14,42 +14,42 @@ ForestFireSimulator::~ForestFireSimulator()
     delete board;
 }
 
-unsigned int ForestFireSimulator::getP() const
+unsigned short ForestFireSimulator::getP() const
 {
     return p;
 }
 
-void ForestFireSimulator::setP(const unsigned int p)
+void ForestFireSimulator::setP(const unsigned short p)
 {
     this->p = p;
 }
 
-unsigned int ForestFireSimulator::getF() const
+unsigned short ForestFireSimulator::getF() const
 {
     return f;
 }
 
-void ForestFireSimulator::setF(const unsigned int f)
+void ForestFireSimulator::setF(const unsigned short f)
 {
     this->f = f;
 }
 
-unsigned int ForestFireSimulator::getSimulationSpeed() const
+unsigned short ForestFireSimulator::getSimulationSpeed() const
 {
     return simulationSpeed;
 }
 
-void ForestFireSimulator::setSimulationSpeed(const unsigned int simulationSpeed)
+void ForestFireSimulator::setSimulationSpeed(const unsigned short simulationSpeed)
 {
     this->simulationSpeed = simulationSpeed;
 }
 
-unsigned int ForestFireSimulator::getBoardHeight() const
+unsigned short ForestFireSimulator::getBoardHeight() const
 {
     return board->getHeight();
 }
 
-unsigned int ForestFireSimulator::getBoardWidth() const
+unsigned short ForestFireSimulator::getBoardWidth() const
 {
     return board->getWidth();
 }
@@ -71,7 +71,7 @@ void ForestFireSimulator::stopAutomatedSimulation()
 
 }
 
-bool ForestFireSimulator::doProbabilityCheck(const unsigned int probability, const unsigned int outOf) const
+bool ForestFireSimulator::doProbabilityCheck(const unsigned short probability, const unsigned short outOf) const
 {
     srand(time(NULL));
 
@@ -89,7 +89,7 @@ void ForestFireSimulator::growTrees()
 {
     // 1) An empty cell turns into a tree with probability p.
     std::vector<Cell*> *emptyCells = board->getAllCellsWithState(CellState::Empty);
-    for (unsigned long i = 0; i < emptyCells->size(); ++i)
+    for (unsigned int i = 0; i < emptyCells->size(); ++i)
     {
         if (doProbabilityCheck(p, PROBABILITY_100_PERCENT))
         {
@@ -102,7 +102,7 @@ void ForestFireSimulator::igniteTrees()
 {
     // 2) A tree ignites with probability f.
     std::vector<Cell*> *treeCells = board->getAllCellsWithState(CellState::Tree);
-    for (unsigned long i = 0; i < treeCells->size(); ++i)
+    for (unsigned int i = 0; i < treeCells->size(); ++i)
     {
         if (doProbabilityCheck(f, PROBABILITY_100_PERCENT))
         {
@@ -117,7 +117,7 @@ void ForestFireSimulator::spreadFire()
     // 4) A burning cell turns into an empty cell
     //   (after it spreads its own fire)
     std::vector<Cell*> *fireCells = board->getAllCellsWithState(CellState::Fire);
-    for (unsigned long i = 0; i < fireCells->size(); ++i)
+    for (unsigned int i = 0; i < fireCells->size(); ++i)
     {
         Cell *currentCell = fireCells->at(i);
         std::vector<Cell*> *neighbors = board->getNeighbors(currentCell->getX(), currentCell->getY());

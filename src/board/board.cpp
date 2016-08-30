@@ -1,16 +1,56 @@
 #include "board.h"
 
-Board::Board(const unsigned int height, const unsigned int width)
+Board::Board(const unsigned short height, const unsigned short width)
 {
+    if (height > MAX_HEIGHT)
+    {
+        // TODO Way to notify (should throw exception?)
+        throw std::exception();
+    }
+
+    if (width > MAX_WIDTH)
+    {
+        // TODO Way to notify (should throw exception?)
+        throw std::exception();
+    }
+
     this->height = height;
     this->width = width;
 
+    // Populate cells
     cells = new std::vector<Cell *>();
+
+    // Manually promote the shorts to ints to avoid compiler multiplication issues.
+    unsigned int proposedSize = ((unsigned int)(height)) * ((unsigned int)(width));
+    if (proposedSize > cells->max_size())
+    {
+        // TODO Way to notify (should throw exception?)
+        throw std::exception();
+    }
+
+    cells->resize(height * width);
+
+    for (unsigned short y = 0; y < height; ++y)
+    {
+        for (unsigned short x = 0; x < width; ++x)
+        {
+            unsigned int index;
+            if (getIndexOf(x, y, index))
+            {
+                cells->at(index) = new Cell(x, y);
+            }
+            else
+            {
+                // TODO Way to notify (should throw exception?)
+                throw std::exception();
+            }
+        }
+    }
 }
 
 Board::~Board()
 {
-    for (unsigned long i = 0; i < cells->size(); ++i)
+    for (unsigned int i = 0; i < cells->size(); ++i)
     {
         delete cells->at(i);
     }
@@ -18,19 +58,19 @@ Board::~Board()
     delete cells;
 }
 
-unsigned int Board::getHeight() const
+unsigned short Board::getHeight() const
 {
     return height;
 }
 
-unsigned int Board::getWidth() const
+unsigned short Board::getWidth() const
 {
     return width;
 }
 
-Cell *Board::getCell(const unsigned int x, const unsigned int y) const
+Cell *Board::getCell(const unsigned short x, const unsigned short y) const
 {
-    unsigned long index;
+    unsigned int index;
     if (getIndexOf(x, y, index) == false)
     {
         return nullptr;
@@ -39,7 +79,7 @@ Cell *Board::getCell(const unsigned int x, const unsigned int y) const
     return cells->at(index);
 }
 
-std::vector<Cell *> *Board::getNeighbors(const unsigned int x, const unsigned int y) const
+std::vector<Cell *> *Board::getNeighbors(const unsigned short x, const unsigned short y) const
 {
     std::vector<Cell *> *neighbors = new std::vector<Cell *>();
 
@@ -48,11 +88,11 @@ std::vector<Cell *> *Board::getNeighbors(const unsigned int x, const unsigned in
         return nullptr;
     }
 
-    unsigned long index;
+    unsigned int index;
 
-    for (unsigned int yIndex = (y - 1); yIndex <= (y + 1); ++yIndex)
+    for (unsigned short yIndex = (y - 1); yIndex <= (y + 1); ++yIndex)
     {
-        for (unsigned int xIndex = (x - 1); xIndex <= (x + 1); ++xIndex)
+        for (unsigned short xIndex = (x - 1); xIndex <= (x + 1); ++xIndex)
         {
             if (getIndexOf(xIndex, yIndex, index) == false)
             {
@@ -70,7 +110,7 @@ std::vector<Cell *> *Board::getAllCellsWithState(const CellState cellState) cons
 {
     std::vector<Cell *> *cellsWithState = new std::vector<Cell *>();
 
-    for (unsigned long i = 0; i < cells->size(); ++i)
+    for (unsigned int i = 0; i < cells->size(); ++i)
     {
         if (cells->at(i)->getCellState() == cellState)
         {
@@ -82,7 +122,7 @@ std::vector<Cell *> *Board::getAllCellsWithState(const CellState cellState) cons
     return cellsWithState;
 }
 
-bool Board::getIndexOf(const unsigned int x, const unsigned int y, unsigned long &index) const
+bool Board::getIndexOf(const unsigned short x, const unsigned short y, unsigned int &index) const
 {
     if (validateCoordinates(x, y) == false)
     {
@@ -93,7 +133,7 @@ bool Board::getIndexOf(const unsigned int x, const unsigned int y, unsigned long
     return true;
 }
 
-bool Board::validateCoordinates(const unsigned int x, const unsigned int y) const
+bool Board::validateCoordinates(const unsigned short x, const unsigned short y) const
 {
     if (x >= width)
     {

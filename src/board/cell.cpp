@@ -1,6 +1,6 @@
 #include "cell.h"
 
-Cell::Cell(const unsigned int x, const unsigned int y)
+Cell::Cell(const unsigned short x, const unsigned short y)
 {
     this->x = x;
     this->y = y;
@@ -12,12 +12,12 @@ Cell::~Cell()
 {
 }
 
-unsigned int Cell::getX() const
+unsigned short Cell::getX() const
 {
     return x;
 }
 
-unsigned int Cell::getY() const
+unsigned short Cell::getY() const
 {
     return y;
 }

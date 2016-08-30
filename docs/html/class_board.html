@@ -64,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -84,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_board-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Board Class Reference</div>  </div>
@@ -97,30 +99,144 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac2d6bdf52110ace6e23cd549f6161e6d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2d6bdf52110ace6e23cd549f6161e6d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Board</b> (const unsigned int height, const unsigned int width)</td></tr>
-<tr class="separator:ac2d6bdf52110ace6e23cd549f6161e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbe4819cf20cdbd0928ea872ded80fa1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbe4819cf20cdbd0928ea872ded80fa1"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> () const </td></tr>
-<tr class="separator:adbe4819cf20cdbd0928ea872ded80fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca1f1d7e7bfaf26f5ea8c80a0ea32e08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca1f1d7e7bfaf26f5ea8c80a0ea32e08"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> () const </td></tr>
-<tr class="separator:aca1f1d7e7bfaf26f5ea8c80a0ea32e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462d2d88de065034690a157b5e3a7e2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a462d2d88de065034690a157b5e3a7e2a"></a>
-<a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getCell</b> (const unsigned int x, const unsigned int y) const </td></tr>
-<tr class="separator:a462d2d88de065034690a157b5e3a7e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad87194acb6f107d2455734bb583deadd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad87194acb6f107d2455734bb583deadd"></a>
-std::vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getNeighbors</b> (const unsigned int x, const unsigned int y) const </td></tr>
-<tr class="separator:ad87194acb6f107d2455734bb583deadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3e2d2c116f0b66293ac8be281875fef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3e2d2c116f0b66293ac8be281875fef"></a>
-std::vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getAllCellsWithState</b> (const CellState cellState) const </td></tr>
+<tr class="memitem:a872c0c8999c17909cf693df3ce7c78b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a872c0c8999c17909cf693df3ce7c78b1">Board</a> (const unsigned short height, const unsigned short width)</td></tr>
+<tr class="memdesc:a872c0c8999c17909cf693df3ce7c78b1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_board.html" title="Top-level Board access class for getting information about Cell. ">Board</a>.  <a href="#a872c0c8999c17909cf693df3ce7c78b1">More...</a><br /></td></tr>
+<tr class="separator:a872c0c8999c17909cf693df3ce7c78b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6956d7acf362888066765e315b2a9887"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6956d7acf362888066765e315b2a9887"></a>
+unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> () const </td></tr>
+<tr class="separator:a6956d7acf362888066765e315b2a9887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d27e008e59db3f1a936eebbac0c55d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d27e008e59db3f1a936eebbac0c55d7"></a>
+unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> () const </td></tr>
+<tr class="separator:a5d27e008e59db3f1a936eebbac0c55d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c155ecfeec2aa43fa91c511ee5823a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ad5c155ecfeec2aa43fa91c511ee5823a">getCell</a> (const unsigned short x, const unsigned short y) const </td></tr>
+<tr class="separator:ad5c155ecfeec2aa43fa91c511ee5823a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01576a951af1d3a0fb5ebae915ab4e1c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a01576a951af1d3a0fb5ebae915ab4e1c">getNeighbors</a> (const unsigned short x, const unsigned short y) const </td></tr>
+<tr class="separator:a01576a951af1d3a0fb5ebae915ab4e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e2d2c116f0b66293ac8be281875fef"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#ad3e2d2c116f0b66293ac8be281875fef">getAllCellsWithState</a> (const CellState cellState) const </td></tr>
 <tr class="separator:ad3e2d2c116f0b66293ac8be281875fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a8f74af7db2f32b5fd99f27d459608123"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f74af7db2f32b5fd99f27d459608123"></a>
+static const unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_HEIGHT</b> = 10000</td></tr>
+<tr class="separator:a8f74af7db2f32b5fd99f27d459608123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f4729e80fe1e128cc705645c98d3cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4f4729e80fe1e128cc705645c98d3cd"></a>
+static const unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_WIDTH</b> = 10000</td></tr>
+<tr class="separator:af4f4729e80fe1e128cc705645c98d3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Top-level <a class="el" href="class_board.html" title="Top-level Board access class for getting information about Cell. ">Board</a> access class for getting information about <a class="el" href="class_cell.html" title="A cell within the Board that holds a CellState. ">Cell</a>. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/jd/Documents/Code/forest-fire.git/trunk/src/board/<a class="el" href="board_8h_source.html">board.h</a></li>
-<li>C:/Users/jd/Documents/Code/forest-fire.git/trunk/src/board/board.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a872c0c8999c17909cf693df3ce7c78b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Board::Board </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_board.html" title="Top-level Board access class for getting information about Cell. ">Board</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">height</td><td>Height of the board (Max is 10,000) </td></tr>
+    <tr><td class="paramname">width</td><td>Width of the board (Max is 10,000) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad3e2d2c116f0b66293ac8be281875fef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; * Board::getAllCellsWithState </td>
+          <td>(</td>
+          <td class="paramtype">const CellState&#160;</td>
+          <td class="paramname"><em>cellState</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>All cells with the given CellState. Returns an empty vector if none are found. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad5c155ecfeec2aa43fa91c511ee5823a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a> * Board::getCell </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Cell* at (x, y). If (x, y) is invalid, returns nullptr instead. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a01576a951af1d3a0fb5ebae915ab4e1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_cell.html">Cell</a> * &gt; * Board::getNeighbors </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned short&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Cells surrounding (x, y). If (x, y) is invalid, returns nullptr instead. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Users/john/Desktop/trunk/src/board/<a class="el" href="board_8h_source.html">board.h</a></li>
+<li>C:/Users/john/Desktop/trunk/src/board/board.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -12,22 +12,27 @@ Top-\/level \hyperlink{class_board}{Board} access class for getting information 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Board} (const unsigned int height, const unsigned int width)\hypertarget{class_board_ac2d6bdf52110ace6e23cd549f6161e6d}{}\label{class_board_ac2d6bdf52110ace6e23cd549f6161e6d}
+\hyperlink{class_board_a872c0c8999c17909cf693df3ce7c78b1}{Board} (const unsigned short height, const unsigned short width)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_board}{Board}. \end{DoxyCompactList}\item 
+unsigned short {\bfseries get\+Height} () const \hypertarget{class_board_a6956d7acf362888066765e315b2a9887}{}\label{class_board_a6956d7acf362888066765e315b2a9887}
 
 \item 
-unsigned int {\bfseries get\+Height} () const \hypertarget{class_board_adbe4819cf20cdbd0928ea872ded80fa1}{}\label{class_board_adbe4819cf20cdbd0928ea872ded80fa1}
+unsigned short {\bfseries get\+Width} () const \hypertarget{class_board_a5d27e008e59db3f1a936eebbac0c55d7}{}\label{class_board_a5d27e008e59db3f1a936eebbac0c55d7}
 
 \item 
-unsigned int {\bfseries get\+Width} () const \hypertarget{class_board_aca1f1d7e7bfaf26f5ea8c80a0ea32e08}{}\label{class_board_aca1f1d7e7bfaf26f5ea8c80a0ea32e08}
+\hyperlink{class_cell}{Cell} $\ast$ \hyperlink{class_board_ad5c155ecfeec2aa43fa91c511ee5823a}{get\+Cell} (const unsigned short x, const unsigned short y) const 
+\item 
+std\+::vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $\ast$ \hyperlink{class_board_a01576a951af1d3a0fb5ebae915ab4e1c}{get\+Neighbors} (const unsigned short x, const unsigned short y) const 
+\item 
+std\+::vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $\ast$ \hyperlink{class_board_ad3e2d2c116f0b66293ac8be281875fef}{get\+All\+Cells\+With\+State} (const Cell\+State cell\+State) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned short {\bfseries M\+A\+X\+\_\+\+H\+E\+I\+G\+HT} = 10000\hypertarget{class_board_a8f74af7db2f32b5fd99f27d459608123}{}\label{class_board_a8f74af7db2f32b5fd99f27d459608123}
 
 \item 
-\hyperlink{class_cell}{Cell} $\ast$ {\bfseries get\+Cell} (const unsigned int x, const unsigned int y) const \hypertarget{class_board_a462d2d88de065034690a157b5e3a7e2a}{}\label{class_board_a462d2d88de065034690a157b5e3a7e2a}
-
-\item 
-std\+::vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $\ast$ {\bfseries get\+Neighbors} (const unsigned int x, const unsigned int y) const \hypertarget{class_board_ad87194acb6f107d2455734bb583deadd}{}\label{class_board_ad87194acb6f107d2455734bb583deadd}
-
-\item 
-std\+::vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $\ast$ {\bfseries get\+All\+Cells\+With\+State} (const Cell\+State cell\+State) const \hypertarget{class_board_ad3e2d2c116f0b66293ac8be281875fef}{}\label{class_board_ad3e2d2c116f0b66293ac8be281875fef}
+static const unsigned short {\bfseries M\+A\+X\+\_\+\+W\+I\+D\+TH} = 10000\hypertarget{class_board_af4f4729e80fe1e128cc705645c98d3cd}{}\label{class_board_af4f4729e80fe1e128cc705645c98d3cd}
 
 \end{DoxyCompactItemize}
 
@@ -35,7 +40,64 @@ std\+::vector$<$ \hyperlink{class_cell}{Cell} $\ast$ $>$ $\ast$ {\bfseries get\+
 \subsection{Detailed Description}
 Top-\/level \hyperlink{class_board}{Board} access class for getting information about \hyperlink{class_cell}{Cell}. 
 
+\subsection{Constructor \& Destructor Documentation}
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection[{\texorpdfstring{Board(const unsigned short height, const unsigned short width)}{Board(const unsigned short height, const unsigned short width)}}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::\+Board (
+\begin{DoxyParamCaption}
+\item[{const unsigned short}]{height, }
+\item[{const unsigned short}]{width}
+\end{DoxyParamCaption}
+)}\hypertarget{class_board_a872c0c8999c17909cf693df3ce7c78b1}{}\label{class_board_a872c0c8999c17909cf693df3ce7c78b1}
+
+
+\hyperlink{class_board}{Board}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & Height of the board (Max is 10,000) \\
+\hline
+{\em width} & Width of the board (Max is 10,000) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Board@{Board}!get\+All\+Cells\+With\+State@{get\+All\+Cells\+With\+State}}
+\index{get\+All\+Cells\+With\+State@{get\+All\+Cells\+With\+State}!Board@{Board}}
+\subsubsection[{\texorpdfstring{get\+All\+Cells\+With\+State(const Cell\+State cell\+State) const }{getAllCellsWithState(const CellState cellState) const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Cell} $\ast$ $>$ $\ast$ Board\+::get\+All\+Cells\+With\+State (
+\begin{DoxyParamCaption}
+\item[{const Cell\+State}]{cell\+State}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_board_ad3e2d2c116f0b66293ac8be281875fef}{}\label{class_board_ad3e2d2c116f0b66293ac8be281875fef}
+\begin{DoxyReturn}{Returns}
+All cells with the given Cell\+State. Returns an empty vector if none are found. 
+\end{DoxyReturn}
+\index{Board@{Board}!get\+Cell@{get\+Cell}}
+\index{get\+Cell@{get\+Cell}!Board@{Board}}
+\subsubsection[{\texorpdfstring{get\+Cell(const unsigned short x, const unsigned short y) const }{getCell(const unsigned short x, const unsigned short y) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cell} $\ast$ Board\+::get\+Cell (
+\begin{DoxyParamCaption}
+\item[{const unsigned short}]{x, }
+\item[{const unsigned short}]{y}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_board_ad5c155ecfeec2aa43fa91c511ee5823a}{}\label{class_board_ad5c155ecfeec2aa43fa91c511ee5823a}
+\begin{DoxyReturn}{Returns}
+Cell$\ast$ at (x, y). If (x, y) is invalid, returns nullptr instead. 
+\end{DoxyReturn}
+\index{Board@{Board}!get\+Neighbors@{get\+Neighbors}}
+\index{get\+Neighbors@{get\+Neighbors}!Board@{Board}}
+\subsubsection[{\texorpdfstring{get\+Neighbors(const unsigned short x, const unsigned short y) const }{getNeighbors(const unsigned short x, const unsigned short y) const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Cell} $\ast$ $>$ $\ast$ Board\+::get\+Neighbors (
+\begin{DoxyParamCaption}
+\item[{const unsigned short}]{x, }
+\item[{const unsigned short}]{y}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_board_a01576a951af1d3a0fb5ebae915ab4e1c}{}\label{class_board_a01576a951af1d3a0fb5ebae915ab4e1c}
+\begin{DoxyReturn}{Returns}
+Cells surrounding (x, y). If (x, y) is invalid, returns nullptr instead. 
+\end{DoxyReturn}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/jd/\+Documents/\+Code/forest-\/fire.\+git/trunk/src/board/board.\+h\item 
-C\+:/\+Users/jd/\+Documents/\+Code/forest-\/fire.\+git/trunk/src/board/board.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/john/\+Desktop/trunk/src/board/board.\+h\item 
+C\+:/\+Users/john/\+Desktop/trunk/src/board/board.\+cpp\end{DoxyCompactItemize}

@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 #include <time.h>
-#include <vector>
 
 #include "board/board.h"
 #include "board/cell.h"
@@ -11,35 +10,35 @@
 class ForestFireSimulator
 {
 public:
-    ForestFireSimulator(const unsigned int boardHeight, const unsigned int boardWidth);
+    ForestFireSimulator(const unsigned short boardHeight, const unsigned short boardWidth);
     ~ForestFireSimulator();
 
-    unsigned int getP() const;
-    void setP(const unsigned int p);
+    unsigned short getP() const;
+    void setP(const unsigned short p);
 
-    unsigned int getF() const;
-    void setF(const unsigned int f);
+    unsigned short getF() const;
+    void setF(const unsigned short f);
 
-    unsigned int getSimulationSpeed() const;
-    void setSimulationSpeed(const unsigned int simulationSpeed);
+    unsigned short getSimulationSpeed() const;
+    void setSimulationSpeed(const unsigned short simulationSpeed);
 
-    unsigned int getBoardHeight() const;
-    unsigned int getBoardWidth() const;
+    unsigned short getBoardHeight() const;
+    unsigned short getBoardWidth() const;
 
     void simulationStep();
     void startAutomatedSimulation();
     void stopAutomatedSimulation();
 
 private:
-    static const unsigned int PROBABILITY_100_PERCENT = 10000;
+    static const unsigned short PROBABILITY_100_PERCENT = 10000;
 
-    unsigned int p;
-    unsigned int f;
-    unsigned int simulationSpeed;
+    unsigned short p;
+    unsigned short f;
+    unsigned short simulationSpeed;
 
     Board *board;
 
-    bool doProbabilityCheck(const unsigned int probability, const unsigned int outOf) const;
+    bool doProbabilityCheck(const unsigned short probability, const unsigned short outOf) const;
 
     void growTrees();
     void igniteTrees();

@@ -27,3 +27,6 @@
 *.exe
 *.out
 *.app
+
+# Allow compiled libraries in the libs folder
+!libs/*

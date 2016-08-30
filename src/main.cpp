@@ -1,12 +1,25 @@
-#include "forestfiresimulator.h"
-
-#include <SDL2/SDL.h>
-
 #include <stdio.h>
 #include <iostream>
 
+#include <SDL2/SDL.h>
+
+#define CATCH_CONFIG_RUNNER
+#include "tests/catch.hpp"
+
+#include "forestfiresimulator.h"
+
 int main(int argc, char *argv[])
 {
+    // Program argument strings
+    const std::string runAllTestsArgument = "--run-all-tests";
+
+    // Parse command line arguments
+    if (argc > 1 && !strcmp(argv[1], runAllTestsArgument.c_str()))
+    {
+        return Catch::Session().run();
+    }
+
+    // Begin the simulation.
     ForestFireSimulator ffs(50, 50);
 
     for (int i = 0; i < 10000; ++i)

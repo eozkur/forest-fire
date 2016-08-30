@@ -9,18 +9,18 @@
 class Cell
 {
 public:
-    Cell(const unsigned int x, const unsigned int y);
+    Cell(const unsigned short x, const unsigned short y);
     ~Cell();
 
-    unsigned int getX() const;
-    unsigned int getY() const;
+    unsigned short getX() const;
+    unsigned short getY() const;
 
     CellState getCellState() const;
     void setCellState(const CellState newCellState);
 
 private:
-    unsigned int x;
-    unsigned int y;
+    unsigned short x;
+    unsigned short y;
 
     CellState cellState;
 };
