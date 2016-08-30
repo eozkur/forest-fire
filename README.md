@@ -10,7 +10,7 @@ The intent of this project is a hello, world! of sorts for playing around with d
     4) A burning cell turns into an empty cell.
 	
 ## Command Line Arguments
-	--run-all-tests Runs all tests in the tests directory using [Catch](https://github.com/philsquared/Catch), then returns.
+--run-all-tests Runs all tests in the tests directory using [Catch](https://github.com/philsquared/Catch), then returns.
 
 ## Developers
 forest-fire is currently being developed as a 32-bit program for Windows using Qt Creator 4.0.2 and the MinGW 5.3.0 32-bit compiler.
@@ -20,6 +20,7 @@ forest-fire uses [Doxygen](http://www.stack.nl/~dimitri/doxygen/) to generate it
 
 ### Running Tests
 forest-fire uses [Catch](https://github.com/philsquared/Catch) to run its unit tests. To run all of the tests, run forest-fire with the --run-all-tests command line argument.
+
 	forest-fire.exe --run-all-tests
 	
 ### Deploying
