@@ -31,7 +31,7 @@ forest-fire uses [Catch](https://github.com/philsquared/Catch) to run its unit t
 	forest-fire.exe --run-all-tests
 	
 ### Deploying
-Currently, forest-fire must be ran from Qt Creator. Once the program is further along, we will make a deploy script for creating a zip file for distribution.
+A deploy script for creating a zip file for distribution is comming soon™.
 
 ### Contributing
 Currently, the project is small enough to not worry about anything formal. If you are interested in helping, just send me an email.
