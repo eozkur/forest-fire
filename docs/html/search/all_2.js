@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['forestfiresimulator',['ForestFireSimulator',['../class_forest_fire_simulator.html',1,'']]]
+  ['displaymanager',['DisplayManager',['../class_display_manager.html',1,'']]]
 ];

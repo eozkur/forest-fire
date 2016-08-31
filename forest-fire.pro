@@ -12,7 +12,8 @@ HEADERS += \
     src/board/board.h \
     src/board/cellstate.h \
     src/forestfiresimulator.h \
-    tests/catch.hpp
+    tests/catch.hpp \
+    src/display/displaymanager.h
 
 SOURCES += \
     src/main.cpp \
@@ -21,7 +22,9 @@ SOURCES += \
     src/forestfiresimulator.cpp \
     tests/sanity.cpp \
     tests/board/cell_tests.cpp \
-    tests/board/board_tests.cpp
+    tests/board/board_tests.cpp \
+    tests/forestfiresimulator_tests.cpp \
+    src/display/displaymanager.cpp
 
 # include SDL libs for Windows.
 LIBS += -L$$PWD/libs/sdl/lib/ -lmingw32
@@ -32,8 +35,15 @@ INCLUDEPATH += $$PWD/libs/sdl/include
 DEPENDPATH += $$PWD/libs/sdl/include
 
 # Copy SDL.dll to the bin folders.
-copydata.commands = $(COPY_DIR) $$shell_path($$PWD/libs/sdl/bin) $$shell_path($$OUT_PWD/debug) $$escape_expand(\n\t) $(COPY_DIR) $$shell_path($$PWD/libs/sdl/bin) $$shell_path($$OUT_PWD/release)
-first.depends = $(first) copydata
+copysdl.commands = $(COPY_DIR) $$shell_path($$PWD/libs/sdl/bin) $$shell_path($$OUT_PWD/debug) $$escape_expand(\n\t) $(COPY_DIR) $$shell_path($$PWD/libs/sdl/bin) $$shell_path($$OUT_PWD/release)
+
+# Copy qt dll libraries to the bin folders.
+copydll.commands = $(COPY_DIR) $$shell_path($$PWD/libs/win) $$shell_path($$OUT_PWD/debug) $$escape_expand(\n\t) $(COPY_DIR) $$shell_path($$PWD/libs/win) $$shell_path($$OUT_PWD/release)
+
+first.depends = $(first) copysdl copydll
+
 export(first.depends)
-export(copydata.commands)
-QMAKE_EXTRA_TARGETS += first copydata
+export(copysdl.commands)
+export(copydll.commands)
+
+QMAKE_EXTRA_TARGETS += first copysdl copydll

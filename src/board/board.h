@@ -12,7 +12,9 @@ class Board
 {
 public:
     /*!
-     * \brief Board
+     * \brief Board Board is responsible for keeping track of all of the Cell objects
+     * on the board and provided convenient access to those Cell objects.
+     *
      * \param height Height of the board (Max is 10,000)
      * \param width Width of the board (Max is 10,000)
      */
@@ -42,8 +44,8 @@ private:
 
     std::vector<Cell *> *cells;
 
-    bool getIndexOf(const unsigned short x, const unsigned short y, unsigned int &index) const;
-    bool validateCoordinates(const unsigned short x, const unsigned short y) const;
+    bool getIndexOf(const int x, const int y, unsigned int &index) const;
+    bool validateCoordinates(const int x, const int y) const;
 };
 
 #endif // BOARDH

@@ -3,10 +3,27 @@
 ForestFireSimulator::ForestFireSimulator(const unsigned short boardHeight, const unsigned short boardWidth)
 {
     board = new Board(boardHeight, boardWidth);
+    init();
+}
 
+ForestFireSimulator::ForestFireSimulator(Board *board)
+{
+    if (board == nullptr)
+    {
+        // TODO Way to notify (should throw exception?)
+        throw std::exception();
+    }
+
+    this->board = board;
+    init();
+}
+
+void ForestFireSimulator::init()
+{
     this->p = 200;
     this->f = 10;
-    this->simulationSpeed = 60;
+
+    srand(time(NULL));
 }
 
 ForestFireSimulator::~ForestFireSimulator()
@@ -34,16 +51,6 @@ void ForestFireSimulator::setF(const unsigned short f)
     this->f = f;
 }
 
-unsigned short ForestFireSimulator::getSimulationSpeed() const
-{
-    return simulationSpeed;
-}
-
-void ForestFireSimulator::setSimulationSpeed(const unsigned short simulationSpeed)
-{
-    this->simulationSpeed = simulationSpeed;
-}
-
 unsigned short ForestFireSimulator::getBoardHeight() const
 {
     return board->getHeight();
@@ -61,21 +68,10 @@ void ForestFireSimulator::simulationStep()
     spreadFire();
 }
 
-void ForestFireSimulator::startAutomatedSimulation()
-{
-
-}
-
-void ForestFireSimulator::stopAutomatedSimulation()
-{
-
-}
-
 bool ForestFireSimulator::doProbabilityCheck(const unsigned short probability, const unsigned short outOf) const
 {
-    srand(time(NULL));
-
-    if ((rand() % outOf) < probability)
+    int r = rand();
+    if ((r % outOf) < probability)
     {
         return true;
     }
@@ -96,6 +92,8 @@ void ForestFireSimulator::growTrees()
             emptyCells->at(i)->setCellState(CellState::Tree);
         }
     }
+
+    delete(emptyCells);
 }
 
 void ForestFireSimulator::igniteTrees()
@@ -109,6 +107,8 @@ void ForestFireSimulator::igniteTrees()
             treeCells->at(i)->setCellState(CellState::Fire);
         }
     }
+
+    delete(treeCells);
 }
 
 void ForestFireSimulator::spreadFire()
@@ -132,8 +132,11 @@ void ForestFireSimulator::spreadFire()
             }
         }
 
+        delete(neighbors);
         currentCell->setCellState(CellState::Empty);
     }
+
+    delete(fireCells);
 }
 
 
