@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     }
 
     // Begin the simulation.
-    Board *board = new Board(1600, 1800);
+    Board *board = new Board(300, 400);
 
     DisplayManager dm(board);
 
