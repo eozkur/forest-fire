@@ -15,6 +15,13 @@ The intent of this project is a hello, world! of sorts for playing around with d
 ## Developers
 forest-fire is currently being developed as a 32-bit program for Windows using Qt Creator 4.0.2 and the MinGW 5.3.0 32-bit compiler.
 
+### TODO List
+	- Fix frames per second counter in main.cpp
+	- Update all throw exceptions to assert statements.
+	- Make zip file release script.
+	- Add a real command line arg parser.
+	- Add command line arguments for setting the board size.
+
 ### Generating Documentation
 forest-fire uses [Doxygen](http://www.stack.nl/~dimitri/doxygen/) to generate its documentation. To regenerate the docs, simply run docs/generate-docs.bat.
 
