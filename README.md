@@ -18,7 +18,6 @@ forest-fire is currently being developed as a 32-bit program for Windows using Q
 ### TODO List
 	- Fix frames per second counter in main.cpp
 	- Update all throw exceptions to assert statements.
-	- Make zip file release script.
 	- Add a real command line arg parser.
 	- Add command line arguments for setting the board size.
 
@@ -31,7 +30,7 @@ forest-fire uses [Catch](https://github.com/philsquared/Catch) to run its unit t
 	forest-fire.exe --run-all-tests
 	
 ### Deploying
-A deploy script for creating a zip file for distribution is comming soon™.
+Build forest-fire for your target machine, then zip the contents of your bin folder.
 
 ### Contributing
 Currently, the project is small enough to not worry about anything formal. If you are interested in helping, just send me an email.
